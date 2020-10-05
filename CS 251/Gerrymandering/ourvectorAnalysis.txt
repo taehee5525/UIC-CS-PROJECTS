@@ -1,0 +1,17 @@
+*********************************************************
+ourvector<i> stats:
+ # of vectors created:   1
+ # of elements inserted: 50
+ # of elements accessed: 52
+*********************************************************
+*********************************************************
+ourvector<NSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE> stats:
+ # of vectors created:   3
+ # of elements inserted: 151
+ # of elements accessed: 4312
+*********************************************************
+
+In my code, I created total of 4 ourvectors. To reduce the number of vectors and elements, I passed all the vectors by reference. It prevented me to create more than enough numbers of vectors. 
+Diststate vector was a string vector to store the district names from districts.txt. eliState vector was a string vector to store the state name from eligible_voters.txt. eliVoters vector was an int vector to store the voting number, which was integer values, from eligible_voters.txt. The lineByline vector was a string vector to store the information from districts.txt line by line.
+All the vectors were created inside the gerrymandering function, from line 573 to 576. Each vector stored 50 elements (names of 50 states excluding the District of Columbia), except the lineByline vector. It included an empty line, from the districts.txt file, at the end. Therefore, total of 201 elements were stored in the vectors.
+I believe the reason why the elements were accessed so many times is because I used loops to call them, and the vectors were called in many locations after the data was stored. For example, the search function makes the program to go through the whole distState and lineByline vector to find out the index of the vectors that user wanted to look for. Also, both vectors were used in all functions (load, search, stats, plot, and turnout). The program accessed called the vectors at least 17 times in the gerrymandering function. Therefore, the number of elements accessed seems correct.
