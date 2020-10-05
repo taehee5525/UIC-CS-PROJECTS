@@ -1,0 +1,8 @@
+For the Big-O Complexity of building the map
+The first portion adding words into the vector is O(1). both counter and valueN are fixed integer. Inserting of vector is also O(1). Therefore, it is O(1). Copying the vector is also O(1) because it is constant operation.
+Before analyzing the second portion, it is important to know the Big O complexity of the builderHelper function. The builderHelper function has 1 if statement, which is checking if the vector is duplicate. The Big O complexity of searching a map is O(logN). The [] operator of map has O(logN). Therefore, the whole if statement is O(logN). The rest of the builderHelper function is O(N) since inserting of map is O(logN) and removing a specific element of a vector is O(N). Therefore, I can say that the builderHelper function has O(N).
+Inside the while loop in building function, there are two if statement with two assignments. They are all O(1). Also, the second portion is O(N) as well since it is using the same builderHelper function. Therefore, the build function has O(N) Big O complexity.
+
+For generating the map,
+The genText has a Big O complexity of O(1) because it is all about assigning.
+The genHelper function has a for loop which assigns elements to a vector. It is O(N). And the other for loop, which itself has a Big O complexity of O(N), it erases an element which has Big O complexity of O(N). Therefore, I can say that the for loop has O(N^2) complexity. The generating map has a Big O complexity of O(N^2).
